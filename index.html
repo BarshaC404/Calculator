@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#d5a574">
+    <meta name="color-scheme" content="light">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Glass Scientific Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+
+    <main class="calculator" aria-label="Scientific calculator">
+        <section class="screen">
+            <div class="status">
+                <span id="modeTag" class="tag">DEG</span>
+                <span id="memTag" class="tag hidden">M</span>
+                <button class="icon-btn" id="sizeBtn" aria-label="Switch between compact and full screen mode">Full screen</button>
+                <button class="icon-btn" id="historyBtn" aria-label="Toggle history">History</button>
+            </div>
+            <div class="expr" id="expr" aria-live="off">0</div>
+            <div class="result" id="result" aria-live="polite"></div>
+            <aside class="history hidden" id="history">
+                <div class="history-head">
+                    <button class="icon-btn back" id="backBtn" aria-label="Back to calculator">&larr; Back</button>
+                    <span class="history-title">History</span>
+                    <span class="head-actions">
+                        <button class="icon-btn" id="refreshHistory" aria-label="Refresh history">Refresh</button>
+                        <button class="icon-btn" id="clearHistory" aria-label="Clear all history">Clear</button>
+                    </span>
+                </div>
+                <div class="history-note" id="historyNote"></div>
+                <ul id="historyList"></ul>
+            </aside>
+        </section>
+
+        <div class="keys">
+            <div class="pad sci">
+                <button class="fn" data-act="second" id="secondBtn">2nd</button>
+                <button class="fn" data-act="mode" id="modeBtn">Deg</button>
+                <button class="fn" data-ins="(">(</button>
+                <button class="fn" data-ins=")">)</button>
+
+                <button class="fn" data-ins="sin(" data-alt="asin(" data-label="sin" data-alt-label="sin⁻¹">sin</button>
+                <button class="fn" data-ins="cos(" data-alt="acos(" data-label="cos" data-alt-label="cos⁻¹">cos</button>
+                <button class="fn" data-ins="tan(" data-alt="atan(" data-label="tan" data-alt-label="tan⁻¹">tan</button>
+                <button class="fn" data-ins="π">π</button>
+
+                <button class="fn" data-ins="ln(" data-alt="e^(" data-label="ln" data-alt-label="eˣ">ln</button>
+                <button class="fn" data-ins="log(" data-alt="10^(" data-label="log" data-alt-label="10ˣ">log</button>
+                <button class="fn" data-ins="√(" data-alt="∛(" data-label="√x" data-alt-label="∛x">√x</button>
+                <button class="fn" data-ins="^" >xʸ</button>
+
+                <button class="fn" data-ins="^2" data-alt="^3" data-label="x²" data-alt-label="x³">x²</button>
+                <button class="fn" data-ins="!">n!</button>
+                <button class="fn" data-ins="^(-1)">1/x</button>
+                <button class="fn" data-ins="abs(">|x|</button>
+
+                <button class="fn" data-ins="e">e</button>
+                <button class="fn" data-ins="Ans">Ans</button>
+                <button class="fn" data-act="mplus">M+</button>
+                <button class="fn" data-act="mrecall">MR</button>
+            </div>
+
+            <div class="pad main">
+                <button class="ctl" data-act="ac">AC</button>
+                <button class="ctl" data-act="del">DEL</button>
+                <button class="ctl" data-ins="%">%</button>
+                <button class="operator" data-ins="÷">÷</button>
+
+                <button data-ins="7">7</button>
+                <button data-ins="8">8</button>
+                <button data-ins="9">9</button>
+                <button class="operator" data-ins="×">×</button>
+
+                <button data-ins="4">4</button>
+                <button data-ins="5">5</button>
+                <button data-ins="6">6</button>
+                <button class="operator" data-ins="−">−</button>
+
+                <button data-ins="1">1</button>
+                <button data-ins="2">2</button>
+                <button data-ins="3">3</button>
+                <button class="operator" data-ins="+">+</button>
+
+                <button class="zero" data-ins="0">0</button>
+                <button data-ins=".">.</button>
+                <button class="equal" data-act="equals">=</button>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
